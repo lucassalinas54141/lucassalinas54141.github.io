@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Países</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header>
+    <h1>Explora Países Fascinantes</h1>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#informacion">Información</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="inicio" style="display:block;">
+      <h2>Inicio</h2>
+      <p>Descubre datos interesantes sobre tres países únicos: Suiza, Taiwán y Botsuana. Aprende sobre sus culturas, historia y más.</p>
+      <div>
+        <a href="#galeria">Ir a Galería</a> | <a href="#informacion">Ir a Información</a> | <a href="#contacto">Ir a Contacto</a>
+      </div>
+    </section>
+    <section id="galeria" style="display:none;">
+      <h2>Galería</h2>
+      <h3>Suiza</h3>
+      <img src="suiza_pais.jpg" alt="Paisaje de Suiza" class="galeria-img">
+      <img src="suiza_bandera.jpg" alt="Bandera de Suiza" class="galeria-img">
+      <h3>Taiwán</h3>
+      <img src="taiwan_pais.jpg" alt="Paisaje de Taiwán" class="galeria-img">
+      <img src="taiwan_bandera.jpg" alt="Bandera de Taiwán" class="galeria-img">
+      <h3>Botsuana</h3>
+      <img src="botsuana_pais.jpg" alt="Paisaje de Botsuana" class="galeria-img">
+      <img src="botsuana_bandera.jpg" alt="Bandera de Botsuana" class="galeria-img">
+    </section>
+    <section id="informacion" style="display:none;">
+      <h2>Información de los Países</h2>
+      <h3>Suiza</h3>
+      <p><strong>Capital:</strong> Berna</p>
+      <p><strong>Población:</strong> 8.8 millones</p>
+      <p><strong>Idioma:</strong> Alemán, Francés, Italiano y Romanche</p>
+      <p><strong>Historia:</strong> Suiza es conocida por su neutralidad política y su banca internacional. Fue fundada como confederación en 1291.</p>
+      <h3>Taiwán</h3>
+      <p><strong>Capital:</strong> Taipéi</p>
+      <p><strong>Población:</strong> 23.6 millones</p>
+      <p><strong>Idioma:</strong> Mandarín</p>
+      <p><strong>Historia:</strong> Taiwán, oficialmente República de China, es una isla con una historia compleja que incluye colonización, influencia japonesa y desarrollo tecnológico.</p>
+      <h3>Botsuana</h3>
+      <p><strong>Capital:</strong> Gaborone</p>
+      <p><strong>Población:</strong> 2.6 millones</p>
+      <p><strong>Idioma:</strong> Inglés y setsuana</p>
+      <p><strong>Historia:</strong> Independiente desde 1966, Botsuana es conocida por su estabilidad política y sus reservas de diamantes.</p>
+    </section>
+    <section id="contacto" style="display:none;">
+      <h2>Contacto</h2>
+      <p><strong>Correo electrónico:</strong> info@paises.com</p>
+      <p><strong>Teléfono:</strong> +123 456 789</p>
+      <p><strong>Dirección:</strong> Oficina Global, Calle Mundial, Planeta Tierra</p>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 Página de Países. Todos los derechos reservados.</p>
+  </footer>
+  <script>
+    document.querySelectorAll('nav ul li a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelectorAll('main section').forEach(section => {
+          section.style.display = 'none';
+        });
+        const targetId = this.getAttribute('href').substring(1);
+        document.getElementById(targetId).style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>
